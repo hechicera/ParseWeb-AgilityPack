@@ -33,6 +33,7 @@ namespace ParseWeb_AgilityPack
                 string html = ListLinks[i];
                 System.Threading.Thread.Sleep(1000);
                 var htmlDoc = web.Load(html);
+                htmlDoc.OptionEmptyCollection = true; //To prevent HTML Agility Pack Null Reference
                 var htmlNodes = htmlDoc.DocumentNode.SelectNodes("//span[@lang='es']");
                 var htmlNodes2 = htmlDoc.DocumentNode.SelectNodes("//span[@lang='pt']");
                 try
